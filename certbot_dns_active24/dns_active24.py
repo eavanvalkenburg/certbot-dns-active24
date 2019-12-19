@@ -43,7 +43,8 @@ class Authenticator(dns_common.DNSAuthenticator):
                 'token': 'API token for the Active24 account.',
             }
         )
-
+        logger.debug("Credentials: %s", self.credentials)
+        
     def _perform(self, domain, validation_name, validation):
         self._get_active24_client().add_txt_record(validation_name, validation)
 

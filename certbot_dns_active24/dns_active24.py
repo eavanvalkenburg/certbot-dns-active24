@@ -142,7 +142,7 @@ class _Active24Client(object):
         token = self.token
         if not isinstance(token, str):
             token = ",".join(token)
-
+        logger.debug("Using token: %s", token)
         response = requests.request(
             method,
             base_url + endpoint,
